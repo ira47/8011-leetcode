@@ -52,10 +52,11 @@ class Solution {
 
 /*
 
+这里题目的前提是每个物品可能选择0或1个。
 状态：前n个东西/背包的大小
 dp[i][j]=true/false，且true的含义不是装的下，而是刚好装满。
 true的必然继承：dp[i-1][j]=true->dp[i][j]=true
-true必然是从旧的true来的，只是可能他们不在同一列。不可能false->true
+true必然是从旧的true来的，只是可能他们不在同一列。不可能false->true，即使对于第一个装入背包里的物品也是这样。
 
 初始化
 1. dp[i][0]=true。因为重量为0也算一列，所以一共有w+1列。
